@@ -1,0 +1,30 @@
+@import "./fonts/fonts.css";
+@import "./colors.css";
+
+* {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-gray-darken-10);
+  font-size: 16px;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+  color: inherit;
+}
