@@ -8,26 +8,19 @@ export default {
   component: Container,
 } as ComponentMeta<typeof Container>;
 
-const styleFactory = (
-  backgroundColor: string,
-  color: string,
-  padding: string
-) => ({
+const styleFactory = (backgroundColor: string) => ({
   backgroundColor,
-  color,
-  padding,
+  color: "white",
+  padding: "0.5rem 1rem",
 });
 
-const Template: ComponentStory<typeof Container> = ({ direction }) => (
-  <Container direction={direction} style={{ backgroundColor: "lightGray" }}>
-    <div style={styleFactory("red", "white", "0.5rem 1rem")}>Content</div>
-    <div style={styleFactory("green", "white", "0.5rem 1rem")}>Content</div>
-    <div style={styleFactory("blue", "white", "0.5rem 1rem")}>Content</div>
+const Template: ComponentStory<typeof Container> = () => (
+  <Container>
+    <div style={styleFactory("red")}>Content</div>
+    <div style={styleFactory("green")}>Content</div>
+    <div style={styleFactory("blue")}>Content</div>
   </Container>
 );
 
-export const Row = Template.bind({});
-Row.args = { direction: "row" };
-
-export const Column = Template.bind({});
-Column.args = { direction: "column" };
+export const Default = Template.bind({});
+Default.args = {};

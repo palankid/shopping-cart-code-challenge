@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import styles from "./Button.module.css";
 
-enum Variants {
+export enum Variants {
   outlined = "outlined",
   contained = "contained",
 }
