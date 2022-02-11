@@ -1,27 +1,47 @@
 import React from "react";
-import "./Button.css";
+import classNames from "classnames";
+
+import styles from "./Button.module.css";
+
+enum Variants {
+  outlined = "outlined",
+  contained = "contained",
+}
 
 interface ButtonProps {
-  children?: React.ReactNode;
-  disabled: boolean;
-  onClick?: () => void;
+  children: React.ReactNode;
+  icon?: React.ReactNode;
+  variant?: keyof typeof Variants;
+  disabled?: boolean;
+  onClick: () => void;
 }
 
 export default function Button({
   children,
-  disabled,
+  icon,
+  variant = Variants.contained,
+  disabled = false,
   onClick,
   ...props
 }: ButtonProps) {
+  const buttonClasses = classNames({
+    [styles.button]: true,
+    [styles[`button--${variant}`]]: !disabled,
+    [styles[`button--${variant}-disabled`]]: disabled,
+  });
+
   return (
     <button
-      className="button"
+      className={buttonClasses}
       type="button"
       disabled={disabled}
       onClick={onClick}
       {...props}
     >
-      {children}
+      <div className={styles["button__content"]}>
+        {icon}
+        {children}
+      </div>
     </button>
   );
 }
