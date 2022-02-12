@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { ShoppingBagIcon } from "../Icon";
 
-import Button from "./Button";
+import Button, { Sizes } from "./Button";
 import Container from "../Container";
 import { Variants } from "./Button";
 
@@ -15,22 +15,31 @@ interface ComponentProps {
   icon: React.ReactNode;
   text: string;
   textDisabled: string;
-  onClick: () => void;
   variant?: keyof typeof Variants;
+  size?: keyof typeof Sizes;
+  onClick: () => void;
 }
 
-const Component = (props: ComponentProps) => (
+const Component = ({
+  icon,
+  text,
+  textDisabled,
+  variant,
+  size,
+  onClick,
+}: ComponentProps) => (
   <Container direction="row">
-    <Button onClick={props.onClick} icon={props.icon} variant={props.variant}>
-      {props.text}
+    <Button icon={icon} variant={variant} size={size} onClick={onClick}>
+      {text}
     </Button>
     <Button
-      onClick={props.onClick}
       disabled
-      icon={props.icon}
-      variant={props.variant}
+      icon={icon}
+      variant={variant}
+      size={size}
+      onClick={onClick}
     >
-      {props.textDisabled}
+      {textDisabled}
     </Button>
   </Container>
 );
@@ -54,10 +63,34 @@ Outlined.args = {
   variant: "outlined",
 };
 
+export const Text = Template.bind({});
+Text.args = {
+  onClick: () => console.log("clicked"),
+  text: "Text",
+  textDisabled: "Text Disabled",
+  variant: "text",
+};
+
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   onClick: () => console.log("clicked"),
   text: "With Icon",
   textDisabled: "With Icon Disabled",
   icon: <ShoppingBagIcon />,
+};
+
+export const Big = Template.bind({});
+Big.args = {
+  onClick: () => console.log("clicked"),
+  text: "Big Button",
+  textDisabled: "Big Disabled",
+  size: "large",
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  onClick: () => console.log("clicked"),
+  text: "Small Button",
+  textDisabled: "Small Disabled",
+  size: "small",
 };

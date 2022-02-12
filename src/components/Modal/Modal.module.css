@@ -1,4 +1,8 @@
 .modal {
+  --close-interval: 0.3s;
+  --color-background-opened: rgba(0, 0, 0, 0.3);
+  --color-background-closed: rgba(0, 0, 0, 0);
+
   position: fixed;
   display: flex;
   align-items: center;
@@ -7,27 +11,79 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--color-background-closed);
   z-index: 1500;
 }
 
-.modalContent {
+@keyframes open-modal {
+  0% {
+    background-color: var(--color-background-closed);
+  }
+  100% {
+    background-color: var(--color-background-opened);
+  }
+}
+
+@keyframes close-modal {
+  0% {
+    background-color: var(--color-background-opened);
+  }
+  100% {
+    background-color: var(--color-background-closed);
+  }
+}
+
+.modal--open {
+  animation-name: open-modal;
+  animation-duration: var(--close-interval);
+  background-color: var(--color-background-opened);
+}
+
+.modal--close {
+  animation-name: close-modal;
+  animation-duration: var(--close-interval);
+}
+
+.modal__content {
   background-color: var(--color-gray-lighten-100);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 15px -5px,
     rgba(0, 0, 0, 0.15) 0px 24px 38px 3px, rgba(0, 0, 0, 0.15) 0px 9px 46px 8px;
   border-radius: 0.25rem;
   position: relative;
   width: 100%;
+  opacity: 0;
 }
 
-.modalHeader {
-  color: red;
+@keyframes open-content {
+  0% {
+    opacity: 0;
+    margin-bottom: 1000px;
+  }
+  100% {
+    opacity: 1;
+    margin-bottom: 0;
+  }
 }
 
-.modalBody {
-  color: green;
+@keyframes close-content {
+  0% {
+    opacity: 1;
+    margin-bottom: 0;
+  }
+  100% {
+    opacity: 0;
+    margin-bottom: 1000px;
+  }
 }
 
-.modalFooter {
-  color: orange;
+.modal__content--open {
+  animation-name: open-content;
+  animation-duration: var(--close-interval);
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__content--close {
+  animation-name: close-content;
+  animation-duration: var(--close-interval);
 }

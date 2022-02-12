@@ -1,12 +1,7 @@
 .button {
   border: none;
-  border-radius: 5px;
-  padding: 0.375rem 1rem;
   cursor: pointer;
   text-transform: capitalize;
-  font-weight: 500;
-  font-size: 0.875rem;
-  letter-spacing: 0.05rem;
   color: var(--color-gray-lighten-100);
 }
 
@@ -14,6 +9,7 @@
   margin-left: 1rem;
 }
 
+/* Contained variant */
 .button--contained {
   background-color: var(--color-gray-darken-20);
   border: 1px solid var(--color-gray-darken-20);
@@ -39,33 +35,76 @@
   cursor: not-allowed;
 }
 
+/* Common parts of text and outlined variants */
+.button--text,
 .button--outlined {
   background-color: transparent;
   color: var(--color-gray-darken-10);
-  border: 1px solid var(--color-gray-darken-10);
   transition: all 0.3s linear;
 }
+.button--text:hover,
+.button--text:active,
 .button--outlined:hover,
 .button--outlined:active {
   background-color: var(--color-blue-lighten-90);
   color: var(--color-blue-darken-20);
-  border: 1px solid var(--color-blue-darken-20);
 }
+.button--text:hover,
 .button--outlined:hover {
   transition: all 0.3s linear, transform 0.1s linear;
 }
+.button--text:active,
 .button--outlined:active {
   transform: scale(0.95);
   transition: transform 0.1s linear;
 }
 
+.button--text-disabled,
 .button--outlined-disabled {
   background-color: transparent;
   color: var(--color-gray-lighten-50);
-  border: 1px solid var(--color-gray-lighten-50);
   cursor: not-allowed;
 }
 
+/* Outlined specific rules */
+.button--outlined {
+  border: 1px solid var(--color-gray-darken-10);
+}
+.button--outlined:hover,
+.button--outlined:active {
+  border: 1px solid var(--color-blue-darken-20);
+}
+
+.button--outlined-disabled {
+  border: 1px solid var(--color-gray-lighten-50);
+}
+
+/* Sizes */
+.button--size-large {
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1.25rem;
+}
+
+.button--size-normal {
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.05rem;
+  border-radius: 0.25rem;
+  padding: 0.375rem 1rem;
+}
+
+.button--size-small {
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.03rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.875rem;
+}
+
+/* Content styles */
 .button__content {
   display: flex;
   align-items: center;

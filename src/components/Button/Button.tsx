@@ -6,12 +6,20 @@ import styles from "./Button.module.css";
 export enum Variants {
   outlined = "outlined",
   contained = "contained",
+  text = "text",
+}
+
+export enum Sizes {
+  large = "large",
+  normal = "normal",
+  small = "small",
 }
 
 interface ButtonProps {
   children: React.ReactNode;
   icon?: React.ReactNode;
   variant?: keyof typeof Variants;
+  size?: keyof typeof Sizes;
   disabled?: boolean;
   onClick: () => void;
 }
@@ -20,6 +28,7 @@ export default function Button({
   children,
   icon,
   variant = Variants.contained,
+  size = Sizes.normal,
   disabled = false,
   onClick,
   ...props
@@ -28,6 +37,7 @@ export default function Button({
     [styles.button]: true,
     [styles[`button--${variant}`]]: !disabled,
     [styles[`button--${variant}-disabled`]]: disabled,
+    [styles[`button--size-${size}`]]: true,
   });
 
   return (
