@@ -1,0 +1,12 @@
+.data-grid__th-cell {
+  color: var(--color-gray-lighten-50);
+  font-weight: 500;
+}
+
+.data-grid__cell {
+  padding-left: 0;
+}
+
+.data-grid__cell:last-child {
+  padding-right: 0;
+}
