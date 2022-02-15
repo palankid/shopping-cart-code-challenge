@@ -22,8 +22,15 @@ const Template: ComponentStory<typeof NumericInput> = () => (
       style={{ margin: "0.5rem" }}
     />
     <NumericInput
-      value={1234}
-      max={10000}
+      value={1}
+      max={100}
+      inputWidth="5rem"
+      style={{ margin: "0.5rem" }}
+      onInput={() => {}}
+    />
+    <NumericInput
+      value={100}
+      max={100}
       inputWidth="5rem"
       style={{ margin: "0.5rem" }}
       onInput={() => {}}

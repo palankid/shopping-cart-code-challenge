@@ -14,8 +14,8 @@ const styleFactory = (backgroundColor: string) => ({
   padding: "0.5rem 1rem",
 });
 
-const Template: ComponentStory<typeof Container> = () => (
-  <Container>
+const Template: ComponentStory<typeof Container> = (args) => (
+  <Container {...args}>
     <div style={styleFactory("red")}>Content</div>
     <div style={styleFactory("green")}>Content</div>
     <div style={styleFactory("blue")}>Content</div>
@@ -24,3 +24,6 @@ const Template: ComponentStory<typeof Container> = () => (
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const WithMaxWidth = Template.bind({});
+WithMaxWidth.args = { maxWidth: "sm" };

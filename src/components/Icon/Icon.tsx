@@ -33,9 +33,11 @@ export const BackIcon = (props: ConcreteIconProps) => (
   <Icon icon={faArrowLeft} {...props} />
 );
 
-export default {
+const Icons = {
   Icon,
   ShoppingBagIcon,
   ShoppingCartIcon,
   BackIcon,
 };
+
+export default Icons;

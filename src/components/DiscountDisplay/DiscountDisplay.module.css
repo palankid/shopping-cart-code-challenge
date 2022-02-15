@@ -1,0 +1,19 @@
+.discount-display {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid var(--color-red-base);
+  border-top-width: 3px;
+  border-radius: 0.5rem;
+  background-color: var(--color-red-lighten-90);
+}
+
+.discount-display__first-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.discount-display__first-row-content {
+  color: var(--color-red-base);
+}

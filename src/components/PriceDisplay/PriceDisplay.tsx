@@ -7,6 +7,7 @@ interface PriceDisplayType {
   price: number;
   currency?: string;
   variant: keyof typeof Variants;
+  className?: string;
   color?: string;
   fontWeight?: string;
 }
@@ -15,6 +16,7 @@ const PriceDisplay = ({
   price,
   currency = "SEK",
   variant,
+  className,
   color,
   fontWeight,
   ...props
@@ -22,6 +24,7 @@ const PriceDisplay = ({
   return (
     <Typography
       variant={variant}
+      className={className}
       color={color}
       fontWeight={fontWeight}
       {...props}

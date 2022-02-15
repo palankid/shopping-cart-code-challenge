@@ -11,7 +11,7 @@ export default {
   component: Modal,
 } as ComponentMeta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = () => {
+const Template: ComponentStory<typeof Modal> = (args) => {
   const [visible, setVisible] = useState(false);
 
   const handleClick = () => setVisible(true);
@@ -20,7 +20,7 @@ const Template: ComponentStory<typeof Modal> = () => {
   return (
     <>
       <Button onClick={handleClick}>Open Modal</Button>
-      <Modal visible={visible} onClose={handleClose}>
+      <Modal {...args} visible={visible} onClose={handleClose}>
         <Section>
           <Typography variant="h3">Header section</Typography>
         </Section>
@@ -51,3 +51,6 @@ const Template: ComponentStory<typeof Modal> = () => {
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const CloseClickOutside = Template.bind({});
+CloseClickOutside.args = { disableClickOutside: false };

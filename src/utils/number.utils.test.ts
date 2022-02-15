@@ -1,4 +1,4 @@
-import { clamp } from "./number.utils";
+import { clamp, calculateDiscountValue } from "./number.utils";
 
 describe("Number Utils", () => {
   describe("clamp", () => {
@@ -18,6 +18,23 @@ describe("Number Utils", () => {
     test("number above range should be adjusted", () => {
       const result = clamp(10, min, max);
       expect(result).toBe(5);
+    });
+  });
+
+  describe("calculateDiscountValue", () => {
+    test("get the 10% discount value of the given number", () => {
+      const result = calculateDiscountValue(1500, 10);
+      expect(result).toBe(150);
+    });
+
+    test("Anything below 0% should be treated as 0%", () => {
+      const result = calculateDiscountValue(1500, -10);
+      expect(result).toBe(0);
+    });
+
+    test("anything above 100% should be treated as 100%", () => {
+      const result = calculateDiscountValue(1500, 130);
+      expect(result).toBe(1500);
     });
   });
 });

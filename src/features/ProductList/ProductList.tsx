@@ -1,0 +1,28 @@
+import React, { useState } from "react";
+
+import Button from "../../components/Button";
+import { ShoppingCartIcon } from "../../components/Icon";
+import ShoppingCart from "../ShoppingCart";
+
+import styles from "./ProductList.module.css";
+
+const ProductList = () => {
+  const [visible, setVisible] = useState(false);
+
+  const handleOpen = () => setVisible(true);
+  const handleClose = () => {
+    setVisible(false);
+  };
+
+  return (
+    <div className={styles["product-list"]}>
+      <Button icon={<ShoppingCartIcon />} onClick={handleOpen}>
+        View Cart
+      </Button>
+
+      <ShoppingCart visible={visible} onClose={handleClose} />
+    </div>
+  );
+};
+
+export default ProductList;

@@ -1,0 +1,8 @@
+.cart-contents__heading {
+  text-transform: capitalize;
+}
+
+.cart-contents__footer {
+  display: flex;
+  justify-content: space-between;
+}
