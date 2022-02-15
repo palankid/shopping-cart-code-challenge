@@ -13,26 +13,29 @@ export enum Sizes {
   large = "large",
   normal = "normal",
   small = "small",
+  tiny = "tiny",
 }
 
 interface ButtonProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   icon?: React.ReactNode;
   variant?: keyof typeof Variants;
   size?: keyof typeof Sizes;
   disabled?: boolean;
+  tabIndex?: number;
   onClick: () => void;
 }
 
-export default function Button({
+const Button = ({
   children,
   icon,
   variant = Variants.contained,
   size = Sizes.normal,
   disabled = false,
+  tabIndex = -1,
   onClick,
   ...props
-}: ButtonProps) {
+}: ButtonProps) => {
   const buttonClasses = classNames({
     [styles.button]: true,
     [styles[`button--${variant}`]]: !disabled,
@@ -45,13 +48,16 @@ export default function Button({
       className={buttonClasses}
       type="button"
       disabled={disabled}
+      tabIndex={tabIndex}
       onClick={onClick}
       {...props}
     >
       <div className={styles["button__content"]}>
         {icon}
-        {children}
+        {children && <span>{children}</span>}
       </div>
     </button>
   );
-}
+};
+
+export default Button;

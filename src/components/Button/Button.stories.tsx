@@ -3,7 +3,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { ShoppingBagIcon } from "../Icon";
 
 import Button, { Sizes } from "./Button";
-import Container from "../Container";
 import { Variants } from "./Button";
 
 export default {
@@ -28,7 +27,7 @@ const Component = ({
   size,
   onClick,
 }: ComponentProps) => (
-  <Container direction="row">
+  <>
     <Button icon={icon} variant={variant} size={size} onClick={onClick}>
       {text}
     </Button>
@@ -41,7 +40,7 @@ const Component = ({
     >
       {textDisabled}
     </Button>
-  </Container>
+  </>
 );
 
 const Template: ComponentStory<typeof Component> = (args) => (

@@ -1,0 +1,28 @@
+.numeric-input__container {
+  display: flex;
+}
+
+.numeric-input__container > *:not(:first-child) {
+  margin-left: 0.25rem;
+}
+
+.numeric-input__input {
+  border-radius: 4px;
+  border: 1px solid var(--color-gray-darken-10);
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding: 0.25rem 0.5rem;
+}
+
+.numeric-input__input:focus {
+  outline: none !important;
+  border: 2px solid var(--color-blue-darken-20);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.numeric-input__input::-webkit-outer-spin-button,
+.numeric-input__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

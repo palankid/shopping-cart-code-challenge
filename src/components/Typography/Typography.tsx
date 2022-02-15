@@ -3,14 +3,7 @@ import React from "react";
 
 import styles from "./Typography.module.css";
 
-interface TypographyProps {
-  variant: string;
-  children: React.ReactNode;
-  className?: string;
-  color?: string;
-}
-
-enum Variants {
+export enum Variants {
   h1 = "h1",
   h2 = "h2",
   h3 = "h3",
@@ -23,11 +16,20 @@ enum Variants {
   body2 = "p",
 }
 
+interface TypographyProps {
+  variant: keyof typeof Variants;
+  children: React.ReactNode;
+  className?: string;
+  color?: string;
+  fontWeight?: string;
+}
+
 const Typography = ({
   variant,
   children,
   className,
   color,
+  fontWeight,
   ...props
 }: TypographyProps) => {
   const Component = Variants[variant as keyof typeof Variants];
@@ -37,7 +39,11 @@ const Typography = ({
   );
 
   return (
-    <Component className={typographyClasses} style={{ color }} {...props}>
+    <Component
+      className={typographyClasses}
+      style={{ color, fontWeight }}
+      {...props}
+    >
       {children}
     </Component>
   );

@@ -104,12 +104,20 @@
   padding: 0.25rem 0.875rem;
 }
 
+.button--size-tiny {
+  font-weight: 500;
+  font-size: 0.625rem;
+  letter-spacing: 0.03rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
+
 /* Content styles */
 .button__content {
   display: flex;
   align-items: center;
 }
 
-.button__content > svg {
-  margin-right: 0.5rem;
+.button__content > *:nth-child(2) {
+  margin-left: 0.5rem;
 }
