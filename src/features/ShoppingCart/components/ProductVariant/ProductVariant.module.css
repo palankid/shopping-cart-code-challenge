@@ -1,0 +1,14 @@
+.product-variant {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.product-variant__color-indicator {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.product-variant__label {
+  margin-left: 0.5rem;
+}

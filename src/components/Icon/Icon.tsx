@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faArrowLeft,
+  faHandPointLeft,
   faShoppingBag,
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
@@ -30,7 +30,7 @@ export const ShoppingCartIcon = (props: ConcreteIconProps) => (
 );
 
 export const BackIcon = (props: ConcreteIconProps) => (
-  <Icon icon={faArrowLeft} {...props} />
+  <Icon icon={faHandPointLeft} {...props} />
 );
 
 const Icons = {

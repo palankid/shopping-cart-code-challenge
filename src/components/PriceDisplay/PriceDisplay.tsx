@@ -1,7 +1,7 @@
 import React from "react";
 import { formatPrice } from "../../utils/currency.utils";
 import Typography from "../Typography";
-import { Variants } from "../Typography/Typography";
+import { Variants } from "../Typography/Typography.types";
 
 interface PriceDisplayType {
   price: number;

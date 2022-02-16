@@ -6,7 +6,8 @@
 }
 
 .table > tbody > tr {
-  border-top: 1px solid var(--color-gray-lighten-20);
+  border: 0;
+  border-top: 1px solid var(--color-gray-lighten-90);
 }
 
 .table__th-cell {

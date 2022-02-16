@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 import styles from "./Table.module.css";
-import { TextAlignments } from "./Table.types";
+import { TextAlignments, VerticalAlignments } from "./Table.types";
 
 interface GenericType {
   children: React.ReactNode;
@@ -12,6 +12,7 @@ interface GenericType {
 
 interface CellType {
   textAlign?: keyof typeof TextAlignments;
+  verticalAlign?: keyof typeof VerticalAlignments;
   width?: string;
 }
 
@@ -37,6 +38,7 @@ export const TableThCell = ({
   children,
   className,
   textAlign = TextAlignments.left,
+  verticalAlign = VerticalAlignments.center,
   width,
   ...props
 }: GenericType & CellType) => {
@@ -47,7 +49,7 @@ export const TableThCell = ({
   );
 
   return (
-    <th className={tableClasses} style={{ width }} {...props}>
+    <th className={tableClasses} style={{ width, verticalAlign }} {...props}>
       {children}
     </th>
   );
@@ -57,6 +59,7 @@ export const TableCell = ({
   children,
   className,
   textAlign = TextAlignments.left,
+  verticalAlign = VerticalAlignments.center,
   width,
   ...props
 }: GenericType & CellType) => {
@@ -67,8 +70,8 @@ export const TableCell = ({
   );
 
   return (
-    <th className={tableClasses} style={{ width }} {...props}>
+    <td className={tableClasses} style={{ width, verticalAlign }} {...props}>
       {children}
-    </th>
+    </td>
   );
 };

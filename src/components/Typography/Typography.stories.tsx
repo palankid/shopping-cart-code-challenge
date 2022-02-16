@@ -37,6 +37,9 @@ const Template: ComponentStory<typeof Typography> = (args) => (
     <Typography {...args} variant="body2">
       body text 2
     </Typography>
+    <Typography {...args} variant="caption">
+      caption
+    </Typography>
   </>
 );
 

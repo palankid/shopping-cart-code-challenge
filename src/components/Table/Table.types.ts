@@ -3,3 +3,9 @@ export enum TextAlignments {
   center = "center",
   right = "right",
 }
+
+export enum VerticalAlignments {
+  top = "top",
+  center = "center",
+  bottom = "bottom",
+}

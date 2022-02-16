@@ -5,16 +5,28 @@ import PriceDisplay from "../PriceDisplay";
 
 import styles from "./DiscountDisplay.module.css";
 import { calculateDiscountValue } from "utils/number.utils";
+import classNames from "classnames";
 
 interface DiscountDisplayType {
   discount: number;
   price: number;
   message: string;
+  className?: string;
 }
 
-const DiscountDisplay = ({ discount, price, message }: DiscountDisplayType) => {
+const DiscountDisplay = ({
+  discount,
+  price,
+  message,
+  className,
+}: DiscountDisplayType) => {
+  const discountDisplayClasses = classNames(
+    styles["discount-display"],
+    className
+  );
+
   return (
-    <div className={styles["discount-display"]}>
+    <div className={discountDisplayClasses}>
       <div className={styles["discount-display__first-row"]}>
         <Typography
           className={styles["discount-display__first-row-content"]}

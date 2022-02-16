@@ -14,13 +14,20 @@ export enum MaxWidths {
 interface ContainerProps {
   children: React.ReactNode;
   maxWidth?: keyof typeof MaxWidths;
+  className?: string;
   [x: string]: any;
 }
 
-const Container = ({ children, maxWidth = "xxl", ...rest }: ContainerProps) => {
+const Container = ({
+  children,
+  maxWidth = "xxl",
+  className,
+  ...rest
+}: ContainerProps) => {
   const containerClasses = classNames(
     styles.container,
-    styles[`container-${maxWidth}`]
+    styles[`container-${maxWidth}`],
+    className
   );
 
   return (

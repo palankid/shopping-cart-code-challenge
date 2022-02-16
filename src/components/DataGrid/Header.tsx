@@ -12,18 +12,21 @@ interface HeaderType {
 const Header = ({ columns }: HeaderType) => (
   <thead>
     <TableRow>
-      {columns.map((column: ColumnType): React.ReactElement => {
-        return (
-          <TableThCell
-            className={styles["data-grid__th-cell"]}
-            role="cell"
-            key={column.key}
-            textAlign={column.align}
-          >
-            {column.title}
-          </TableThCell>
-        );
-      })}
+      {columns
+        .filter(({ visible = true }: ColumnType) => visible)
+        .map((column: ColumnType): React.ReactElement => {
+          return (
+            <TableThCell
+              className={styles["data-grid__th-cell"]}
+              role="cell"
+              key={column.key}
+              textAlign={column.align}
+              width={column.width}
+            >
+              {column.title}
+            </TableThCell>
+          );
+        })}
     </TableRow>
   </thead>
 );

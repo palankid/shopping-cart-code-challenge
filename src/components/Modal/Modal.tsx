@@ -54,7 +54,10 @@ const Modal = ({
 
   return ReactDOM.createPortal(
     <div className={modalClasses} onClick={handleClose}>
-      <Container maxWidth={maxWidth}>
+      <Container
+        className={styles["modal__content-container"]}
+        maxWidth={maxWidth}
+      >
         <div className={contentClasses} onClick={handleContentClick}>
           {children}
         </div>

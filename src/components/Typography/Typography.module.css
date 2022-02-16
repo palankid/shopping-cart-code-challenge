@@ -19,7 +19,7 @@
 }
 
 .typography--h5 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
 }
 
@@ -39,4 +39,8 @@
 
 .typography--body2 {
   font-size: 0.875rem;
+}
+
+.typography--caption {
+  font-size: 0.75rem;
 }

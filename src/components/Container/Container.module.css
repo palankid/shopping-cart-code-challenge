@@ -31,7 +31,7 @@
   }
 
   .container-md {
-    width: var(--width-lg);
+    width: var(--width-md);
   }
 
   .container-sm {
@@ -49,7 +49,7 @@
   }
 
   .container-md {
-    width: var(--width-lg);
+    width: var(--width-md);
   }
 
   .container-sm {

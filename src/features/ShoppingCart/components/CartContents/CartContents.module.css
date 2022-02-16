@@ -6,3 +6,7 @@
   display: flex;
   justify-content: space-between;
 }
+
+.cart_contents__discount {
+  margin-top: 1rem;
+}

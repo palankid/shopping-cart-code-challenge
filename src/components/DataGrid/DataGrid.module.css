@@ -4,9 +4,5 @@
 }
 
 .data-grid__cell {
-  padding-left: 0;
-}
-
-.data-grid__cell:last-child {
-  padding-right: 0;
+  padding: 1.25rem 0;
 }

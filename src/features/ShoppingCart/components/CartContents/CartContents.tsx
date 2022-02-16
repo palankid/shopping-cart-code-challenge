@@ -7,6 +7,8 @@ import styles from "./CartContents.module.css";
 import Button from "components/Button";
 import { BackIcon, ShoppingBagIcon } from "components/Icon";
 import DiscountDisplay from "components/DiscountDisplay";
+import ProductGrid from "../ProductGrid";
+import CartSummary from "../CartSummary";
 
 interface CartContentsType {
   onClose: () => void;
@@ -29,14 +31,23 @@ const CartContents = ({ onClose }: CartContentsType) => {
         </Typography>
       </Section>
       <Section>
+        <ProductGrid />
         <DiscountDisplay
+          className={styles["cart_contents__discount"]}
           discount={10}
           price={1500}
           message="As a first time shopper you get discount on your first order."
         />
       </Section>
+      <Section padding="0">
+        <CartSummary discount={10} price={1500} />
+      </Section>
       <Section className={styles["cart-contents__footer"]}>
-        <Button icon={<BackIcon />} onClick={handleBackClick}>
+        <Button
+          icon={<BackIcon />}
+          variant="outlined"
+          onClick={handleBackClick}
+        >
           Continue shopping
         </Button>
         <Button icon={<ShoppingBagIcon />} onClick={handleCheckoutClick}>

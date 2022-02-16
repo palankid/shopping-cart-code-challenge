@@ -1,5 +1,5 @@
 .numeric-input__container {
-  display: flex;
+  display: inline-flex;
 }
 
 .numeric-input__container > *:not(:first-child) {

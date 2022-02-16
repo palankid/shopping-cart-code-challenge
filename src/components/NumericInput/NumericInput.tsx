@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import classNames from "classnames";
 
 import Button from "../Button";
 import { clamp } from "../../utils/number.utils";

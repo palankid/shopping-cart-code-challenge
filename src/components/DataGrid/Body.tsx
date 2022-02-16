@@ -15,23 +15,26 @@ const Body = ({ columns, dataProvider }: BodyType) => (
     {dataProvider.map(
       (row: RowType): React.ReactElement => (
         <TableRow key={`row-${row.id}`}>
-          {columns.map((column: ColumnType): React.ReactElement => {
-            const key = `cell-${row.id}-${column.key}`;
-            const element = column.cellRenderer
-              ? column.cellRenderer(row, column)
-              : row[column.key];
+          {columns
+            .filter(({ visible = true }: ColumnType) => visible)
+            .map((column: ColumnType): React.ReactElement => {
+              const key = `cell-${row.id}-${column.key}`;
+              const element = column.cellRenderer
+                ? column.cellRenderer(row, column)
+                : row[column.key];
 
-            return (
-              <TableCell
-                className={styles["data-grid__cell"]}
-                key={key}
-                textAlign={column.align}
-                width={column.width}
-              >
-                {element}
-              </TableCell>
-            );
-          })}
+              return (
+                <TableCell
+                  className={styles["data-grid__cell"]}
+                  key={key}
+                  textAlign={column.align}
+                  verticalAlign={column.verticalAlign}
+                  width={column.width}
+                >
+                  {element}
+                </TableCell>
+              );
+            })}
         </TableRow>
       )
     )}

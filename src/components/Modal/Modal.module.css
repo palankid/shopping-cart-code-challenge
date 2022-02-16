@@ -4,15 +4,19 @@
   --color-background-closed: rgba(0, 0, 0, 0);
 
   position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  overflow-y: auto;
+  text-align: center;
+  inset: 0;
   background-color: var(--color-background-closed);
   z-index: 1500;
+}
+
+.modal:before {
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
+  content: "";
 }
 
 @keyframes open-modal {
@@ -44,13 +48,18 @@
   animation-duration: var(--close-interval);
 }
 
+.modal__content-container {
+  margin: 2rem;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+
 .modal__content {
   background-color: var(--color-gray-lighten-100);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 15px -5px,
     rgba(0, 0, 0, 0.15) 0px 24px 38px 3px, rgba(0, 0, 0, 0.15) 0px 9px 46px 8px;
   border-radius: 0.25rem;
-  position: relative;
-  width: 100%;
   opacity: 0;
 }
 

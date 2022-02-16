@@ -1,0 +1,23 @@
+.product-display {
+  display: flex;
+}
+
+.product-display__image {
+  width: 150px;
+  height: 150px;
+}
+
+.product-display__attributes {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-display__brand {
+  color: var(--color-gray-lighten-50);
+  text-transform: uppercase;
+}
+
+.product-display__buttons {
+  margin-top: auto;
+}
