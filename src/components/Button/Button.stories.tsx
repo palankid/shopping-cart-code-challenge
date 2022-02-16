@@ -70,6 +70,14 @@ Text.args = {
   variant: "text",
 };
 
+export const Link = Template.bind({});
+Link.args = {
+  onClick: () => console.log("clicked"),
+  text: "Link",
+  textDisabled: "Link Disabled",
+  variant: "link",
+};
+
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   onClick: () => console.log("clicked"),

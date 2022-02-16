@@ -14,7 +14,7 @@
 }
 
 .cart-summary__discount {
-  color: var(--color-red-base);
+  color: var(--color-orange-base);
 }
 
 .cart-summary__value {

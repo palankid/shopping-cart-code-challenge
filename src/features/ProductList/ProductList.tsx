@@ -16,7 +16,11 @@ const ProductList = () => {
 
   return (
     <div className={styles["product-list"]}>
-      <Button icon={<ShoppingCartIcon />} onClick={handleOpen}>
+      <Button
+        aria-label="View Cart"
+        icon={<ShoppingCartIcon />}
+        onClick={handleOpen}
+      >
         View Cart
       </Button>
 

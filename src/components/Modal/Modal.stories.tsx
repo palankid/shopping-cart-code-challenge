@@ -5,6 +5,7 @@ import Modal from "./Modal";
 import Button from "../Button";
 import Section from "./Section";
 import Typography from "../Typography";
+import ModalHeading from "./ModalHeading";
 
 export default {
   title: "components/Modal",
@@ -21,9 +22,7 @@ const Template: ComponentStory<typeof Modal> = (args) => {
     <>
       <Button onClick={handleClick}>Open Modal</Button>
       <Modal {...args} visible={visible} onClose={handleClose}>
-        <Section>
-          <Typography variant="h3">Header section</Typography>
-        </Section>
+        <ModalHeading title="Header section" />
         <Section padding="0">
           <div
             style={{

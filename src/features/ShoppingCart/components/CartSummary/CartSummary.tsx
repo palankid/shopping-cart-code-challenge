@@ -28,7 +28,7 @@ const CartSummary = ({ discount, price }: CartSummaryType) => {
           -{formatPrice({ price: discountValue })}
         </span>
       </Typography>
-      <Typography variant="h5" fontWeight="700">
+      <Typography variant="body1" fontWeight="700">
         Total
         <span className={styles["cart-summary__value"]}>
           {formatPrice({ price: total })}

@@ -9,6 +9,7 @@ import { BackIcon, ShoppingBagIcon } from "components/Icon";
 import DiscountDisplay from "components/DiscountDisplay";
 import ProductGrid from "../ProductGrid";
 import CartSummary from "../CartSummary";
+import ModalHeading from "components/Modal/ModalHeading";
 
 interface CartContentsType {
   onClose: () => void;
@@ -25,11 +26,7 @@ const CartContents = ({ onClose }: CartContentsType) => {
 
   return (
     <>
-      <Section>
-        <Typography className={styles["cart-contents__heading"]} variant="h3">
-          Your shopping cart
-        </Typography>
-      </Section>
+      <ModalHeading title="Your shopping cart" />
       <Section>
         <ProductGrid />
         <DiscountDisplay
@@ -46,11 +43,16 @@ const CartContents = ({ onClose }: CartContentsType) => {
         <Button
           icon={<BackIcon />}
           variant="outlined"
+          aria-label="Continue shopping"
           onClick={handleBackClick}
         >
           Continue shopping
         </Button>
-        <Button icon={<ShoppingBagIcon />} onClick={handleCheckoutClick}>
+        <Button
+          aria-label="Go to checkout page"
+          icon={<ShoppingBagIcon />}
+          onClick={handleCheckoutClick}
+        >
           Checkout
         </Button>
       </Section>

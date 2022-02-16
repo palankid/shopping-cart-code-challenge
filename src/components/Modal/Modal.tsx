@@ -13,6 +13,7 @@ interface ModalProps {
   disableClickOutside?: boolean;
   maxWidth: keyof typeof MaxWidths;
   onClose: () => void;
+  [key: string]: any;
 }
 
 const Modal = ({
@@ -21,6 +22,7 @@ const Modal = ({
   disableClickOutside = true,
   maxWidth = MaxWidths.xxl,
   onClose,
+  ...props
 }: ModalProps) => {
   const [modalVisible, setModalVisible] = useState(visible);
 
@@ -53,12 +55,18 @@ const Modal = ({
   });
 
   return ReactDOM.createPortal(
-    <div className={modalClasses} onClick={handleClose}>
+    <div className={modalClasses} onClick={handleClose} {...props}>
       <Container
         className={styles["modal__content-container"]}
         maxWidth={maxWidth}
       >
-        <div className={contentClasses} onClick={handleContentClick}>
+        <div
+          role="dialog"
+          aria-labelledby="modalHeadingTitle"
+          aria-modal="true"
+          className={contentClasses}
+          onClick={handleContentClick}
+        >
           {children}
         </div>
       </Container>

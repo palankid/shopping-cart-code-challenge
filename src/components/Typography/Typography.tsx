@@ -11,6 +11,7 @@ interface TypographyProps {
   className?: string;
   color?: string;
   fontWeight?: string;
+  [key: string]: any;
 }
 
 const Typography = ({

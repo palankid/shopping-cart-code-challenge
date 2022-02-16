@@ -14,7 +14,7 @@
 }
 
 .product-display__brand {
-  color: var(--color-gray-lighten-50);
+  color: var(--color-gray-lighten-30);
   text-transform: uppercase;
 }
 

@@ -13,7 +13,7 @@ interface DataGridType {
 
 const DataGrid = ({ columns, dataProvider }: DataGridType) => {
   return (
-    <Table>
+    <Table role="grid">
       <Header columns={columns} />
       <Body columns={columns} dataProvider={dataProvider} />
     </Table>

@@ -7,13 +7,13 @@ export enum Variants {
   outlined = "outlined",
   contained = "contained",
   text = "text",
+  link = "link",
 }
 
 export enum Sizes {
   large = "large",
   normal = "normal",
   small = "small",
-  tiny = "tiny",
 }
 
 interface ButtonProps {
@@ -32,7 +32,7 @@ const Button = ({
   variant = Variants.contained,
   size = Sizes.normal,
   disabled = false,
-  tabIndex = -1,
+  tabIndex = 0,
   onClick,
   ...props
 }: ButtonProps) => {
@@ -41,6 +41,7 @@ const Button = ({
     [styles[`button--${variant}`]]: !disabled,
     [styles[`button--${variant}-disabled`]]: disabled,
     [styles[`button--size-${size}`]]: true,
+    [styles["button--padding-reset"]]: variant === Variants.link,
   });
 
   return (

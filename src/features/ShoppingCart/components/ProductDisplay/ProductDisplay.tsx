@@ -36,16 +36,29 @@ const ProductDisplay = ({
         <Typography
           className={styles["product-display__brand"]}
           variant="caption"
+          fontWeight="400"
         >
           {brand}
         </Typography>
-        <Typography variant="body2">{product}</Typography>
+        <Typography variant="body2" fontWeight="700">
+          {product}
+        </Typography>
         <ProductVariant color={color} size={size} />
         <div className={styles["product-display__buttons"]}>
-          <Button variant="text" size="tiny" onClick={handleChange}>
+          <Button
+            variant="link"
+            size="small"
+            aria-label="Change product variant"
+            onClick={handleChange}
+          >
             Change
           </Button>
-          <Button variant="text" size="tiny" onClick={handleDelete}>
+          <Button
+            variant="link"
+            size="small"
+            aria-label="Delete product"
+            onClick={handleDelete}
+          >
             Delete
           </Button>
         </div>

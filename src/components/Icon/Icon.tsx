@@ -1,24 +1,31 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faHandPointLeft,
+  faAngleLeft,
   faShoppingBag,
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 import styles from "./Icon.module.css";
+import classNames from "classnames";
 
 interface IconProps {
   icon: IconProp;
+  className?: string;
   [x: string]: any;
 }
 
 interface ConcreteIconProps {
+  className?: string;
   [x: string]: any;
 }
 
-export const Icon = ({ icon, ...rest }: IconProps) => (
-  <FontAwesomeIcon className={styles.icon} icon={icon} {...rest} />
+export const Icon = ({ icon, className, ...rest }: IconProps) => (
+  <FontAwesomeIcon
+    className={classNames(styles.icon, className)}
+    icon={icon}
+    {...rest}
+  />
 );
 
 export const ShoppingBagIcon = (props: ConcreteIconProps) => (
@@ -30,7 +37,7 @@ export const ShoppingCartIcon = (props: ConcreteIconProps) => (
 );
 
 export const BackIcon = (props: ConcreteIconProps) => (
-  <Icon icon={faHandPointLeft} {...props} />
+  <Icon icon={faAngleLeft} {...props} />
 );
 
 const Icons = {

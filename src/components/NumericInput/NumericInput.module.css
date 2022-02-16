@@ -16,9 +16,7 @@
 
 .numeric-input__input:focus {
   outline: none !important;
-  border: 2px solid var(--color-blue-darken-20);
-  margin-top: 0;
-  margin-bottom: 0;
+  border: 1px solid var(--color-blue-base);
 }
 
 .numeric-input__input::-webkit-outer-spin-button,

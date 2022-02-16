@@ -53,7 +53,9 @@ const NumericInput = ({
     <div className={styles["numeric-input__container"]} style={style}>
       <Button
         variant="text"
-        size="tiny"
+        size="small"
+        aria-label="Decrease Value"
+        aria-disabled={decreaseDisabled}
         disabled={decreaseDisabled}
         icon={<Icon icon={faMinus} />}
         onClick={handleAdjustNumber(-1)}
@@ -71,7 +73,9 @@ const NumericInput = ({
       />
       <Button
         variant="text"
-        size="tiny"
+        size="small"
+        aria-label="Increase Value"
+        aria-disabled={increaseDisabled}
         disabled={increaseDisabled}
         icon={<Icon icon={faPlus} />}
         onClick={handleAdjustNumber(1)}

@@ -7,7 +7,7 @@
 
 .table > tbody > tr {
   border: 0;
-  border-top: 1px solid var(--color-gray-lighten-90);
+  border-top: 1px solid var(--color-gray-lighten-70);
 }
 
 .table__th-cell {

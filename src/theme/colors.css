@@ -8,6 +8,15 @@
   --color-blue-darken-20: #0056cc;
   --color-blue-darken-30: #004cb3;
 
+  --color-orange-lighten-90: #fff5e7;
+  --color-orange-lighten-30: #ffb44d;
+  --color-orange-lighten-20: #ffa933;
+  --color-orange-lighten-10: #ff9e1a;
+  --color-orange-base: #ff9300;
+  --color-orange-darken-10: #e68500;
+  --color-orange-darken-20: #cc7600;
+  --color-orange-darken-30: #b36700;
+
   --color-gray-lighten-100: #ffffff;
   --color-gray-lighten-95: #fafafa;
   --color-gray-lighten-90: #eeeeee;
