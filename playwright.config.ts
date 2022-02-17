@@ -49,6 +49,12 @@ const config: PlaywrightTestConfig = {
       },
     },
   ],
+  webServer: {
+    command: "npm run start",
+    port: 3000,
+    timeout: 120 * 1000,
+    reuseExistingServer: true,
+  },
 };
 
 export default config;
