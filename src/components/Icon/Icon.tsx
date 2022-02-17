@@ -1,3 +1,6 @@
+import React from "react";
+import classNames from "classnames";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleLeft,
@@ -7,7 +10,6 @@ import {
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 import styles from "./Icon.module.css";
-import classNames from "classnames";
 
 interface IconProps {
   icon: IconProp;

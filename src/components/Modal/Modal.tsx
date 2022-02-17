@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import classNames from "classnames";
 
 import { MaxWidths } from "components/Container/Container";
-import Container from "../Container";
+import Container from "components/Container";
 
 import styles from "./Modal.module.css";
 

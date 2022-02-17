@@ -1,5 +1,6 @@
 import React from "react";
-import Modal from "../../components/Modal";
+
+import Modal from "components/Modal";
 import CartContents from "./components/CartContents";
 
 interface ShoppingCartType {

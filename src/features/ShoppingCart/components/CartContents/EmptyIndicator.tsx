@@ -1,6 +1,6 @@
 import React from "react";
-
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
+
 import { Icon } from "components/Icon";
 import Typography from "components/Typography";
 

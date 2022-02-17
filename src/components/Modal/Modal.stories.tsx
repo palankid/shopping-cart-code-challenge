@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Modal from "./Modal";
-import Button from "../Button";
+import Button from "components/Button";
 import Section from "./Section";
-import Typography from "../Typography";
+import Typography from "components/Typography";
 import ModalHeading from "./ModalHeading";
 
 export default {

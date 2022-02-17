@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import Button from "../../components/Button";
-import { ShoppingCartIcon } from "../../components/Icon";
-import ShoppingCart from "../ShoppingCart";
+import Button from "components/Button";
+import { ShoppingCartIcon } from "components/Icon";
+import ShoppingCart from "features/ShoppingCart";
 
 import styles from "./ProductList.module.css";
 

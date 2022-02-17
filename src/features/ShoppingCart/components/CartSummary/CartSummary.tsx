@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 import Typography from "components/Typography";
 import { formatPrice } from "utils/currency.utils";
-
 import { getCartTotals } from "features/ShoppingCart/store/cart.selectors";
 
 import styles from "./CartSummary.module.css";

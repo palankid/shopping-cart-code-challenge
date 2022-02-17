@@ -1,10 +1,10 @@
 import React from "react";
+import classNames from "classnames";
 
-import Typography from "../Typography";
-import PriceDisplay from "../PriceDisplay";
+import Typography from "components/Typography";
+import PriceDisplay from "components/PriceDisplay";
 
 import styles from "./DiscountDisplay.module.css";
-import classNames from "classnames";
 
 interface DiscountDisplayType {
   discount: number;

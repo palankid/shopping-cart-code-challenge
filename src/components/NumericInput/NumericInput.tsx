@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-
-import Button from "../Button";
-import { clamp } from "../../utils/number.utils";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
+import Button from "components/Button";
+import { Icon } from "components/Icon";
+import { clamp } from "utils/number.utils";
+
 import styles from "./NumericInput.module.css";
-import { Icon } from "../Icon";
 
 interface NumericInputType {
   value: number;

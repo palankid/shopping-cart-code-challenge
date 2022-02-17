@@ -2,8 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import Section from "components/Modal/Section";
-
-import styles from "./CartContents.module.css";
 import Button from "components/Button";
 import { BackIcon, ShoppingBagIcon } from "components/Icon";
 import DiscountDisplay from "components/DiscountDisplay";
@@ -15,6 +13,8 @@ import {
   getCartTotals,
 } from "features/ShoppingCart/store/cart.selectors";
 import EmptyIndicator from "./EmptyIndicator";
+
+import styles from "./CartContents.module.css";
 
 interface CartContentsType {
   onClose: () => void;

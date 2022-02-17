@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { ShoppingBagIcon } from "../Icon";
 
+import { ShoppingBagIcon } from "components/Icon";
 import Button, { Sizes } from "./Button";
 import { Variants } from "./Button";
 
