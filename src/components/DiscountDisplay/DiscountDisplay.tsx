@@ -9,6 +9,7 @@ import classNames from "classnames";
 interface DiscountDisplayType {
   discount: number;
   value: number;
+  currency?: string;
   message: string;
   className?: string;
 }
@@ -16,6 +17,7 @@ interface DiscountDisplayType {
 const DiscountDisplay = ({
   discount,
   value,
+  currency = "SEK",
   message,
   className,
 }: DiscountDisplayType) => {
@@ -36,6 +38,7 @@ const DiscountDisplay = ({
         <PriceDisplay
           className={styles["discount-display__first-row-content"]}
           price={value}
+          currency={currency}
           variant="body2"
         />
       </div>
