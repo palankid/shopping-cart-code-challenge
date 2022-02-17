@@ -1,0 +1,14 @@
+.empty-indicator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-indicator > *:first-child {
+  margin-bottom: 0.75rem;
+}
+
+.empty-indicator__icon {
+  color: var(--color-gray-lighten-70);
+}

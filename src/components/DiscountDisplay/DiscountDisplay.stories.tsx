@@ -11,7 +11,7 @@ export default {
 const Template: ComponentStory<typeof DiscountDisplay> = () => (
   <DiscountDisplay
     discount={10}
-    price={1500}
+    value={-150}
     message="As a first time shopper you get discount on your first order."
   />
 );

@@ -10,3 +10,10 @@
 .cart_contents__discount {
   margin-top: 1rem;
 }
+
+.cart_contents__empty-message {
+  text-align: center;
+  background-color: var(--color-red-darken-20);
+  padding: 1rem;
+  color: var(--color-gray-lighten-100);
+}

@@ -1,12 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
 import Typography from "components/Typography";
 
 import styles from "./ProductDisplay.module.css";
 import ProductVariant from "../ProductVariant";
 import Button from "components/Button";
+import { deleteItem } from "features/ShoppingCart/store/cart.slice";
 
 interface ProductDisplayType {
+  id: string;
   product: string;
   brand: string;
   image: string;
@@ -15,15 +18,20 @@ interface ProductDisplayType {
 }
 
 const ProductDisplay = ({
+  id,
   product,
   brand,
   image,
   color,
   size,
 }: ProductDisplayType) => {
+  const dispatch = useDispatch();
+
   const handleChange = () => {};
 
-  const handleDelete = () => {};
+  const handleDelete = () => {
+    dispatch(deleteItem(id));
+  };
 
   return (
     <div className={styles["product-display"]}>
@@ -49,6 +57,7 @@ const ProductDisplay = ({
             variant="link"
             size="small"
             aria-label="Change product variant"
+            disabled
             onClick={handleChange}
           >
             Change

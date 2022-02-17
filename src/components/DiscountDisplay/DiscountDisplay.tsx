@@ -4,19 +4,18 @@ import Typography from "../Typography";
 import PriceDisplay from "../PriceDisplay";
 
 import styles from "./DiscountDisplay.module.css";
-import { calculateDiscountValue } from "utils/number.utils";
 import classNames from "classnames";
 
 interface DiscountDisplayType {
   discount: number;
-  price: number;
+  value: number;
   message: string;
   className?: string;
 }
 
 const DiscountDisplay = ({
   discount,
-  price,
+  value,
   message,
   className,
 }: DiscountDisplayType) => {
@@ -36,7 +35,7 @@ const DiscountDisplay = ({
         </Typography>
         <PriceDisplay
           className={styles["discount-display__first-row-content"]}
-          price={-calculateDiscountValue(price, discount)}
+          price={value}
           variant="body2"
         />
       </div>
