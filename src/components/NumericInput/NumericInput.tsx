@@ -63,6 +63,7 @@ const NumericInput = ({
       <input
         className={styles["numeric-input__input"]}
         type="number"
+        aria-label="Numeric Input"
         value={currentValue}
         min={min}
         max={max}
